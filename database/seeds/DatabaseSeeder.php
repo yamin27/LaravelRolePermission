@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             // \DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
             // Call the php artisan migrate:refresh
-            $this->command->call('migrate:refresh');
+            $this->command->call('migrate:fresh');
             $this->command->warn("Data cleared, starting from blank database.");
 
             // enable back fk constrain check
@@ -71,9 +71,9 @@ class DatabaseSeeder extends Seeder
         }
 
 
-        // now lets seed some posts for demo
-        factory(\App\Post::class, 30)->create();
-        $this->command->info('Some Posts data seeded.');
+//        // now lets seed some posts for demo
+//        factory(\App\Post::class, 30)->create();
+//        $this->command->info('Some Posts data seeded.');
         $this->command->warn('All done :)');
     }
 

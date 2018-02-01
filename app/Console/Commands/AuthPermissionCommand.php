@@ -8,7 +8,8 @@ use Illuminate\Console\Command;
 
 class AuthPermissionCommand extends Command
 {
-    protected $signature = 'auth:permission {name} {--R|remove}';
+    protected $signature = 'auth:permission {name} {--R|remove}';   // php artisan auth:permission branch
+
 
     public function handle()
     {
@@ -29,7 +30,7 @@ class AuthPermissionCommand extends Command
                 Permission::firstOrCreate(['name' => $permission ]);
             }
 
-            $this->info('Permissions ' . implode(', ', $permissions) . ' created.');
+            $this->info('Your Permissions (' . implode(', ', $permissions) . ') has been successfully created.');
         }
 
         // sync role for admin
